@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*-----------------------DEFAULT SETUP AREA-----------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color-primary: #0E4BF1;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132,139,200,0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+body{
+    width: 100%;
+    background: #e5e7eb;
+    position: relative;
+    display: flex;
+}
+
+.clickable{
+    cursor: pointer;
+}
+/*-----------------------MENU AREA-----------------------*/
+#menu{
+    background: #111827;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+#menu .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 30px 0 0 30px;
+}
+
+#menu .logo img{
+    width: 40px;
+    margin-right: 15px;
+}
+
+#menu .items{
+    margin-top: 40px;
+}
+
+#menu .items div{
+    padding: 12px 0;
+    transition: 0.3s ease;
+}
+
+#menu .items div:hover{
+    background: #253047;
+    cursor: pointer;
+}
+
+#menu .items div.activing{
+    border-left: 4px solid #fff;
+}
+
+#menu .items div i{
+    color: rgb(134, 141, 151);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+
+#menu .items div:hover i,
+#menu .items div:hover a{
+    color: #f3f4f6;
+}
+
+#menu .items div a{
+    text-decoration: none;
+    color: rgb(134, 141, 151);
+    font-weight: 300px;
+    transition: 0.3s ease;
+}
+
+
+/*-----------------------INTERFACE AREA-----------------------*/
+#interface{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    position: relative;
+}
+
+#interface .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 30px;
+    border-bottom: 3px solid #594ef7;
+    position: fixed;
+    width: calc(100% - 250px);
+    z-index: 999;
+}
+
+
+#interface .navigation .profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#interface .navigation .n1 span{
+    font-size: 23px;
+}
+
+#interface .navigation .profile i{
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#interface .navigation .profile img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.n1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#menu-btn{
+    display: none;
+    color: #2b2b2b;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.i-name{
+    color: #444a53;
+    padding: 30px 30px 0 30px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 70px;
+}
+
+.values{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.values .val-box{
+    background: #fff;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.values .val-box i{
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.values .val-box:nth-child(1) i{
+    background: #7b74ec;
+}
+
+.values .val-box:nth-child(2) i{
+    background: #5c8af0;
+}
+
+.values .val-box:nth-child(3) i{
+    background: #e45d99;
+}
+
+.values .val-box:nth-child(4) i{
+    background: #74daec;
+}
+
+.values .val-box:nth-child(5) i{
+    background: #0dcaf0;
+}
+
+.values .val-box h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+.values .val-box span{
+    font-size: 15px;
+    color: #828997;
+}
+
+.values .val-box a{
+    text-decoration: none;
+}
+
+/*-----------------------BOARD AREA-----------------------*/
+
+.board{
+    width: 94%;
+    margin: 30px 0 30px 30px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 1px;
+}
+
+.board img{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.board h5{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.board p{
+    font-weight: 400;
+    font-size: 13px;
+    color: #787d8d;
+}
+
+.board .people{
+
+    text-align: start;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+tr{
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead tr th{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background: #f9fafb;
+    text-align: start;
+    padding: 15px;
+}
+
+tbody tr td{
+    padding: 10px 15px;
+}
+
+.active p{
+    background: #d7fada;
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+.edit a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #554cd1;
+    font-weight: 600;
+}
+
+/*-----------------------LOGIN AREA-----------------------*/
+
+.login-area{
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.login-box h1{
+    margin-top: 15px;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+    font-size: 30px;
+}
+
+.login-box form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .text-field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.text-field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.text-field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+.text-field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: 0.5s ease;
+}
+
+.text-field input:focus ~ label,
+.text-field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+
+.text-field input:focus ~ span,
+.text-field input:valid ~ span{
+    width: 100%;
+}
+
+.login-btn{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.login-btn:hover{
+    border-color: #2691d9;
+    transition: 0.5s ease;
+}
+
+/*-----------------------CART ADD AREA-----------------------*/
+
+.boddyy{
+    display: flex;
+    max-height: 300vh;
+    justify-content: center;
+    align-items: center;    
+    padding: 10px;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100%/2 - 200px);
+}
+
+form .user-details .input-box-left{
+    margin-bottom: 5px;
+    width: calc(100%/2 + 180px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box-left .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input,
+.user-details .input-box select{
+    height: 36px;
+    width: 100%;
+    outline: none;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+}
+
+.user-details .input-box-left input,
+.user-details .input-box-left select{
+    height: 36px;
+    width: 100%;
+    outline: none;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+}
+
+.user-details .input-box textarea{
+    height: 108px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+    color: black;
+}
+.user-details .input-box-left textarea{
+    height: 108px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+    color: black;
+}
+
+/* .user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #9b59b6;
+} */
+
+form .debit-note-list{
+    text-align: center;
+}
+
+form .debit-note-list .debit_note{
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+}
+
+form .debit-note-list .debit_note .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+form .debit-note-list .debit_note input{
+    height: 36px;
+    width: calc(100%/2 - 20px);;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+    color: black;
+}
+
+.container form .note{
+    height: 75px;
+    margin-bottom: 45px;
+    width: 100%;
+}
+
+
+.container form .button{
+    height: 35px;
+    margin: 25px 0;
+}
+
+.container form .button input,
+.container form .button button{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.container form .button button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container form .note .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.container form .note .selling_note{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+    color: black;
+}
+
+/* .container form .note .selling_note:focus,
+.container form .note .selling_note:valid{
+    border-color: #9b59b6;
+} */
+
+/*-----------------------ALERT AREA-----------------------*/
+
+.addSuccess{
+    color: rgb(2, 230, 2);
+    margin-bottom: 10px;
+    position: absolute;
+}
+.addError{
+    margin-bottom: 10px;
+    color: red;
+    position: absolute;
+}
+
+
+/*-----------------------DISPLAY NONE FOR DETAILS AREA-----------------------*/
+.not_display{
+    display: none !important;
+}
+
+#back_to_finance_list a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+#back_to_finance_list{
+    margin-left: 30px;
+}
+
+/*------------------------MAIN AREA------------------------*/
+
+.insights{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+}
+
+.insights>div{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    justify-content: flex-start;
+    width: calc(100% / 2 - 30px);
+}
+
+.insights>div:hover{
+    box-shadow: none;
+}
+
+.insights>div i{
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.insights>div.for_rent i{
+    background: var(--color-primary);
+}
+
+.insights>div.collect_tax_fee i{
+    background: var(--color-danger);
+}
+
+.insights>div.contract_tax i{
+    background: var(--color-success);
+}
+
+.insights>div.contract_no_tax i{
+    background: var(--color-warning);
+}
+
+.insights>div .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.insights>div .middle h4{
+    margin: 1rem 0 0.6rem;
+    font-size: 1.3rem;
+}
+
+.insights>div .middle h3{
+    font-size: 1rem;
+}
+
+.insights>div button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.percent{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-left: 50px;
+}
+
+.percent svg{
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.percent svg circle{
+    width: 120px;
+    height: 120px;
+    fill: none;
+    stroke-width: 10;
+    stroke: #000;
+    transform: translate(5px,5px);
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+}
+
+.percent svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.percent svg circle.circle_for_rent{
+    stroke: #03a9f4;
+}
+
+.percent svg circle.circle_tax_fee{
+    stroke: var(--color-danger);
+}
+
+.percent svg circle.circle_contract_tax{
+    stroke: var(--color-success);
+}
+
+.percent svg circle.circle_contract_no_tax{
+    stroke: var(--color-warning);
+}
+
+.percent .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.percent .number h2{
+    font-size: 20px;
+}
+
+.insights small{
+    margin-top: 1.3rem;
+    display: block;
+}
+
